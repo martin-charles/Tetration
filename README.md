@@ -14,8 +14,10 @@ $ git clone https://github.com/martin-charles/Tetration.git
 2. Add your hosts to inventory file (inventory.ini)
 3. Download sensors and put it into folder (/Tetration/roles/sensor_install/files)
 4. There are two scripts a)to install pre-req b) to install actual sensor
+5. Disable Host Key checking on the control machine (/etc/ansible/ansible.cfg)
 
 User Guide
- Run the following command to install sensor on Centos/Redhat/Ubuntu machines
  
- ansible-playbook playbook.yml -i inventory.ini
+ -> Run the following command to install sensor on Centos/Redhat/Ubuntu machines
+ 
+            ansible-playbook playbook.yml -i inventory.ini
