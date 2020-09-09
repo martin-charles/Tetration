@@ -24,14 +24,4 @@ User Guide
             ansible-playbook playbook.yml -i inventory.ini 
 
 
-Installation(with ssh-keygen)
-
-$ git clone https://github.com/martin-charles/Tetration.git
-
-1. Generate ssh-keygen on the control machine
-2. ssh-copy-id -i $HOME/.ssh/id_rsa.pub root@(Serverip)(give the server password)
-3. Add only hosts to inventory file (inventory_key.ini)
-4. Download sensors and put it into folder (/Tetration/roles/sensor_install/files)
-5. There are two scripts a)to install pre-req b) to install actual sensor
-6. Disable Host Key checking on the control machine (/etc/ansible/ansible.cfg)
 
