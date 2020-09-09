@@ -1,0 +1,16 @@
+---
+- hosts:  target1
+  become: yes
+  become_method: sudo
+  become_user: root
+  tasks:
+    - name: deploy installer script
+      copy:
+        src: tetration_installer_maplelabpov_enforcer_linux.sh
+        dest: /tmp/tetration_installer_maplelabpov_enforcer_linux.sh
+        owner: root
+        group: root
+        mode: 0700
+
+    - name: run installer script
+      shell: /tmp/tetration_installer_maplelabpov_enforcer_linux.sh --logfile=/root/tetration_install_log.log

@@ -1,0 +1,8 @@
+---
+- hosts:  all
+  become: yes
+  become_method: sudo
+  become_user: root
+  roles:
+    - pre-req
+    - sensor_install

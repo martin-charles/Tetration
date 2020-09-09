@@ -1,0 +1,11 @@
+---
+# tasks file for pre-req
+- name: Performing Tasks for CentOS/RedHat
+  include: centos.yml
+  when: (ansible_facts['distribution'] == 'RedHat')or
+        (ansible_facts['distribution'] == 'CentOS')
+
+- name: Performing Tasks for Ubuntu
+  include: ubuntu.yml
+  when: ansible_facts['distribution'] == 'Ubuntu'
+

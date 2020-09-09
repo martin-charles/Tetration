@@ -1,0 +1,21 @@
+---
+# tasks file for sensor_install
+- stat:
+    path: /usr/local/tet
+  register: result
+ 
+ 
+
+- name: deploy installer script
+  copy:
+    src: tetration_installer_maplelabpov_enforcer_linux.sh
+    dest: /tmp/tetration_installer_maplelabpov_enforcer_linux.sh
+    owner: root
+    group: root
+    mode: 0700
+  when: not result.stat.exists
+  
+
+- name: run installer script
+  shell: /tmp/tetration_installer_maplelabpov_enforcer_linux.sh --logfile=/root/tetration_install_log.log
+  when: not result.stat.exists
